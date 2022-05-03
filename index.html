@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSynth</title>
+  <link rel="stylesheet" href="WebSynthStyle.css">
+  <link rel="stylesheet" href="https://use.typekit.net/yts0csb.css">
+</head>
+
+<body>
+  <div class="content_wrapper">
+    <h1>WebSynth</h1>
+    <p class="center">Use your mouse or keyboard to play!</p>
+    <div id="text">
+      <div class="gallery">
+        <div class="gallery-item">
+          <div class="slidecontainer">
+            <p>Volume: <span id="VolumeOut"></span></p>
+            <input type="range" min="0" max="100" value="10" class="slider" id="Volume">
+          </div>
+          <div class="slidecontainer">
+            <p>Detune: <span id="DetuneOut"></span></p>
+            <input type="range" min="-50" max="50" value="20" class="slider" id="Detune">
+          </div>
+          <div class="slidecontainer">
+            <p>Modulation Gain: <span id="ModulationGainOut"></span></p>
+            <input type="range" min="0" max="5000" value="500" class="slider" id="ModulationGain">
+          </div>
+        </div>
+        <div class="gallery-item">
+          <p class="center">Modulator Osc:</p>
+          <select id="modulatorOscType" style="padding: 5px;" onchange="getSelectValue();">
+            <option value="sine">Sine</option>
+            <option value="square">Square</option>
+            <option value="sawtooth">Sawtooth</option>
+            <option value="triangle">Triangle</option>
+          </select>
+          <br>
+          <br>
+          <p class="center">Carrier Osc:</p>
+          <select id="carrierOscType" style="padding: 5px;" onchange="getSelectValue();">
+            <option value="sine">Sine</option>
+            <option value="square">Square</option>
+            <option value="sawtooth">Sawtooth</option>
+            <option value="triangle">Triangle</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <br>
+      <button style="padding: 5px;" onClick="window.location.reload();">Reload page if sound is frozen</button>
+    </div>
+
+    <div id="content">
+      <div id="keyboard"></div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <p class="center">
+      <a class="link link_custom" title="Website" target="_blank"
+          href="https://michaelbokatius.com/">michaelbokatius.com</a>
+    </p>
+  </div>
+
+  <script src="qwerty-hancock.js"></script>
+  <script src="WebSynth.js"></script>
+</body>
+
+</html>
